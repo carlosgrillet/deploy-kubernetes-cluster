@@ -151,10 +151,24 @@ kubeadm join k8s-control:6443 --token <TOKEN> --discovery-token-ca-cert-hash sha
 
 ### Install kubecolor tool (Optional)
 
+> For MacOS M series
 ```bash
-wget https://github.com/hidetatz/kubecolor/releases/download/v0.0.25/kubecolor_0.0.25_Linux_arm64.tar.gz
-tar -xvf ubecolor_0.0.25_Linux_arm64.tar.gz
+wget https://github.com/hidetatz/kubecolor/releases/download/v0.0.25/kubecolor_0.0.25_Darwin_arm64.tar.gz
+```
+> For MacOS Intel
+```bash
+wget https://github.com/hidetatz/kubecolor/releases/download/v0.0.25/kubecolor_0.0.25_Darwin_x86_64.tar.gz
+```
+> For Linux
+```bash
+wget https://github.com/hidetatz/kubecolor/releases/download/v0.0.25/kubecolor_0.0.25_Linux_x86_64.tar.gz
+```
+> Extract the tar file and move the binary to /usr/local/bin
+```bash
+tar -zxvf kubecolor_*
+sudo chmod +x kubecolor
 sudo mv kubecolor /usr/bin
+
 ```
 
 > Now you can create an alias for kubecolor or use the tool like `kubecolor get nodes`
